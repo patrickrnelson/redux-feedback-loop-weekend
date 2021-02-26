@@ -8,6 +8,7 @@ import UnderstandingPage from '../UnderstandingPage/UnderstandingPage';
 import SupportedPage from '../SupportedPage/SupportedPage';
 import CommentsPage from '../CommentsPage/CommentsPage';
 import ReviewPage from '../ReviewPage/ReviewPage';
+import ThankYouPage from '../ThankYouPage/ThankYouPage'
 
 function App() {
 
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path='/review'>
           <ReviewPage />
+        </Route>
+        <Route path='/thankyou'>
+          <ThankYouPage />
         </Route>
       </Router>
  

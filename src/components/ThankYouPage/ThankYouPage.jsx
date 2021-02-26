@@ -1,19 +1,18 @@
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
-function ReviewPage() {
+function ThankYouPage() {
   const history = useHistory();
 
   const onClick = () => {
-    history.push('/thankyou')
+    history.push('/')
   }
 
   return (
     <>
-    <h3>Review Your Submission</h3>
-
-    <button onClick={onClick}>Submit!</button>
+    <h2>Thank you!</h2>
+    <button onClick={onClick}>Leave New Feedback</button>
     </>
   )
 }
 
-export default ReviewPage;
+export default ThankYouPage;

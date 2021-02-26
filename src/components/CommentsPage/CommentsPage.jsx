@@ -1,10 +1,18 @@
+import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+
 function CommentsPage() {
+  const history = useHistory();
+
+
+  const onClick = () => {
+    history.push('/review')
+  }
 
   return (
     <>
-    <label for="commentsInput">Any comments you want to leave?</label>
+    <label htmlFor="commentsInput">Any comments you want to leave?</label>
     <input id="commentsInput" type="text"/>
-    <button>Next</button>
+    <button onClick={onClick}>Next</button>
     </>
   )
 }
