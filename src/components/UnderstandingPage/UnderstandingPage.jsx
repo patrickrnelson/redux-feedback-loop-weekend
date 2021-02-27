@@ -9,12 +9,16 @@ function UnderstandingPage() {
   const [understandingScore, setUnderstanding] = useState(0);
 
   const onClick = () => {
-    dispatch({
-      type: 'UNDERSTANDING_SCORE',
-      payload: understandingScore
-    })
-
-    history.push('/supported')
+    if(feelingScore > 0 && feelingScore < 6) {
+      dispatch({
+        type: 'UNDERSTANDING_SCORE',
+        payload: understandingScore
+      })
+      history.push('/supported')
+    }
+    else {
+      alert('Please choose a number between 1 and 5')
+    }
   }
 
   return (

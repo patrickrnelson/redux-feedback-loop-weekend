@@ -9,12 +9,16 @@ function CommentsPage() {
   const [comments, setComments] = useState('');
 
   const onClick = () => {
-    dispatch({
-      type: 'COMMENTS_INPUT',
-      payload: comments
-    })
-
-    history.push('/review')
+    if(comments !== '') {
+      dispatch({
+        type: 'COMMENTS_INPUT',
+        payload: comments
+      })
+      history.push('/review')
+    }
+    else {
+      alert('Write something, please!')
+    }
   }
 
   return (

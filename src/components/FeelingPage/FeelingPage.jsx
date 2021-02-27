@@ -9,12 +9,16 @@ function FeelingPage() {
   const [feelingScore, setFeelingScore] = useState(0);
 
   const onClick = () => {
-    dispatch({
-      type: 'FEELING_SCORE',
-      payload: feelingScore
-    })
-    history.push('/understanding')
-
+    if(feelingScore > 0 && feelingScore < 6) {
+      dispatch({
+        type: 'FEELING_SCORE',
+        payload: feelingScore
+      })
+      history.push('/understanding')
+    }
+    else {
+      alert('Please choose a number between 1 and 5')
+    }
   }
   
   return (

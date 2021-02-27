@@ -4,6 +4,7 @@ import axios from 'axios';
 
 function ReviewPage() {
   const history = useHistory();
+  const dispatch = useDispatch();
   const feedbackSubmission = useSelector(store => store.feedbackReducer);
 
   const onClick = () => {
@@ -19,11 +20,10 @@ function ReviewPage() {
       dispatch ({
         type: 'CLEAR_FEEDBACK'
       })
-      .catch((err) => {
-        console.log('Error in POST', err);
-      })
+    })
+    .catch((err) => {
+      console.log('Error in POST', err);
     });
-    
   }
 
   return (
