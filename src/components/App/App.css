@@ -18,6 +18,19 @@
   font-size: large;
 }
 
-h4 {
+.subtitle {
   font-style: italic;
+}
+
+/* .feedbackPage {
+  display: flex;
+  flex-direction: column;
+} */
+
+.feedbackQuestion {
+  font-size: 21px;
+}
+
+.nextBtn {
+  margin-top: 20px;
 }

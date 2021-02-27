@@ -1,6 +1,11 @@
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+//Material UI
+import Radio from '@material-ui/core/Radio';
+import Box from '@material-ui/core/Box';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 function SupportedPage() {
   const history = useHistory();
@@ -25,13 +30,17 @@ function SupportedPage() {
 
   return (
     <>
-    <label htmlFor="supportedScore">How well are you being supported?</label>
-    <input 
-      id="supportedScore" 
-      type="number"
-      value={supportScore}
-      onChange={(event) => setSupportScore(event.target.value)} />
-    <button onClick={onClick}>Next</button>
+    <h4 id="supportScore" className="feedbackQuestion">How well are you being supported?</h4>
+    <Box display="flex" justifyContent="center">
+      <RadioGroup row aria-label="SupportScore" name="support" value={supportScore} onChange={(event) => setSupportScore(event.target.value)}>
+        <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="bottom"/>
+        <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="bottom"/>
+        <FormControlLabel value="3" control={<Radio />} label="3" labelPlacement="bottom"/>
+        <FormControlLabel value="4" control={<Radio />} label="4" labelPlacement="bottom"/>
+        <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
+      </RadioGroup>
+    </Box>
+    <button className="nextBtn" onClick={onClick}>Next</button>
     </>
   )
 }
