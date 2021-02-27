@@ -7,12 +7,21 @@ import Box from '@material-ui/core/Box';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 function SupportedPage() {
   const history = useHistory();
   const dispatch = useDispatch();
 
   const [supportScore, setSupportScore] = useState(0);
+  // set the open state for the error alert
+  const [open, setOpen] = React.useState(false);
+
+  // Alert for the MUI snackbar
+  function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
 
   const onClick = () => {
     if(supportScore > 0 && supportScore < 6 ) {
@@ -23,11 +32,17 @@ function SupportedPage() {
       history.push('/comments')
     }
     else {
-      alert('Please choose a number between 1 and 5')
+      setOpen(true)
     }
-
-    
   }
+
+  // handle the close for Material UI snackbar
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
 
   return (
     <>
@@ -41,6 +56,11 @@ function SupportedPage() {
         <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
       </RadioGroup>
     </Box>
+    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Alert onClose={handleClose} severity="error">
+        Please Select a Number
+      </Alert>
+    </Snackbar>
     <Button onClick={onClick} color="primary">Next</Button>
     </>
   )
