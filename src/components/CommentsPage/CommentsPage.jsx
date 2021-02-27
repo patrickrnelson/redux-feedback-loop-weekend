@@ -6,12 +6,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 function CommentsPage() {
   const history = useHistory();
   const dispatch = useDispatch();
 
   const [comments, setComments] = useState('');
+  const [open, setOpen] = React.useState(false);
+
+  // Alert for the MUI snackbar
+  function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
 
   const onClick = () => {
     if(comments !== '') {
@@ -22,9 +30,18 @@ function CommentsPage() {
       history.push('/review')
     }
     else {
-      alert('Write something, please!')
+      setOpen(true)
     }
   }
+
+  // handle the close for Material UI snackbar
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <>
@@ -36,11 +53,17 @@ function CommentsPage() {
           multiline
           rows={3}
           variant="outlined"
+          style = {{width: 350}}
           value={comments}
           onChange={(event) => setComments(event.target.value)} 
         />
         </Box>
         <br/>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            Please Enter A Comment
+          </Alert>
+        </Snackbar>
     {/* <input 
       id="commentsInput" 
       type="text"
