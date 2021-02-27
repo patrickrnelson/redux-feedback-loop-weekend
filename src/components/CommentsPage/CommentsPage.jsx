@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 function CommentsPage() {
   const history = useHistory();
@@ -27,6 +29,7 @@ function CommentsPage() {
   return (
     <>
     <h4 id="comments" className="feedbackQuestion">Any comments you want to leave?</h4>
+    <Box mb={1}>
     <TextField
           id="comments-box"
           label="Additional Comments"
@@ -36,13 +39,14 @@ function CommentsPage() {
           value={comments}
           onChange={(event) => setComments(event.target.value)} 
         />
+        </Box>
         <br/>
     {/* <input 
       id="commentsInput" 
       type="text"
       value={comments}
       onChange={(event) => setComments(event.target.value)} /> */}
-    <button className="nextBtn" onClick={onClick}>Next</button>
+    <Button onClick={onClick} color="primary">Next</Button>
     </>
   )
 }

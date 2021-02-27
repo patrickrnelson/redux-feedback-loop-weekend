@@ -6,6 +6,7 @@ import Radio from '@material-ui/core/Radio';
 import Box from '@material-ui/core/Box';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Button from '@material-ui/core/Button';
 
 function SupportedPage() {
   const history = useHistory();
@@ -31,7 +32,7 @@ function SupportedPage() {
   return (
     <>
     <h4 id="supportScore" className="feedbackQuestion">How well are you being supported?</h4>
-    <Box display="flex" justifyContent="center">
+    <Box display="flex" justifyContent="center" mb={3}>
       <RadioGroup row aria-label="SupportScore" name="support" value={supportScore} onChange={(event) => setSupportScore(event.target.value)}>
         <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="bottom"/>
         <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="bottom"/>
@@ -40,7 +41,7 @@ function SupportedPage() {
         <FormControlLabel value="5" control={<Radio />} label="5" labelPlacement="bottom"/>
       </RadioGroup>
     </Box>
-    <button className="nextBtn" onClick={onClick}>Next</button>
+    <Button onClick={onClick} color="primary">Next</Button>
     </>
   )
 }

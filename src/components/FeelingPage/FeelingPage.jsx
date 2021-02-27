@@ -30,7 +30,7 @@ function FeelingPage() {
   return (
     <>
       <h4 id="feelingScore" className="feedbackQuestion">How are you feeling today?</h4>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" mb={3}>
         <RadioGroup row aria-label="FeelingScore" name="feeling" value={feelingScore} onChange={(event) => setFeelingScore(event.target.value)}>
           <FormControlLabel value="1" control={<Radio />} label="1" labelPlacement="bottom"/>
           <FormControlLabel value="2" control={<Radio />} label="2" labelPlacement="bottom"/>

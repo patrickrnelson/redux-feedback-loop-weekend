@@ -1,4 +1,6 @@
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+//Material UI
+import Button from '@material-ui/core/Button';
 
 function StartPage() {
   const history = useHistory();
@@ -11,7 +13,7 @@ function StartPage() {
   return (
     <>
       <h3>Start Your Feedback!</h3>
-      <button onClick={onClick}>Start</button>
+      <Button onClick={onClick} color="primary" variant="contained">Start</Button>
     </>
   )
 }

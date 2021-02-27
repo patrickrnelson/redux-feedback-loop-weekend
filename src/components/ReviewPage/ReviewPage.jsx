@@ -1,6 +1,8 @@
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 import {  useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+// Material UI
+import Button from '@material-ui/core/Button';
 
 function ReviewPage() {
   const history = useHistory();
@@ -47,7 +49,7 @@ function ReviewPage() {
       <p>{feedbackSubmission.comments}</p>
     </div>
 
-    <button onClick={onClick}>Submit!</button>
+    <Button onClick={onClick} color="primary" variant="contained">Submit</Button>
     </>
   )
 }
