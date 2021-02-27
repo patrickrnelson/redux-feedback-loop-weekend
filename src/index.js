@@ -14,7 +14,11 @@ const feedbackReducer = (state = {}, action) => {
     case 'UNDERSTANDING_SCORE':
       return {...state, understanding: action.payload};
     case 'SUPPORT_SCORE':
-      return {...state, support: action.payload}
+      return {...state, support: action.payload};
+    case 'COMMENTS_INPUT':
+      return {...state, comments: action.payload};
+    case 'CLEAR_FEEDBACK':
+      return {};
   }
   return state;
 }
