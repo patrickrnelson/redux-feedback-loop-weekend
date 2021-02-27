@@ -2,6 +2,7 @@ const express = require('express');
 const { rawListeners } = require('../modules/pool');
 const router = express.Router();
 const pool = require('../modules/pool');
+const moment = require('moment');
 
 
 // POST to send submissions to DB
@@ -26,11 +27,14 @@ router.post('/', (req,res) => {
 router.get('/', (req,res) => {
   pool.query('SELECT * FROM "feedback" ORDER BY id;')
     .then((results) => {
+    for (item of results.rows) {
+      item.date = moment(item.date).format('MM-DD-YYYY');
+    }
     console.log('Successful GET');
     res.send(results.rows)
     })
     .catch((err) => {
-      console.log('Error in GET', error);
+      console.log('Error in GET', err);
       res.status(500);
     })
 });
