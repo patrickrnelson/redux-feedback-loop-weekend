@@ -7,11 +7,25 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
+const feedbackReducer = (state = {}, action) => {
+  switch(action.type) {
+    case 'FEELING_SCORE':
+      return {... state, feeling: action.payload};
+    case 'UNDERSTANDING_SCORE':
+      return {...state, understanding: action.payload};
+    case 'SUPPORT_SCORE':
+      return {...state, support: action.payload};
+    case 'COMMENTS_INPUT':
+      return {...state, comments: action.payload};
+    case 'CLEAR_FEEDBACK':
+      return {};
+  }
+  return state;
+}
 
 const storeInstance = createStore(
   combineReducers({
-  
+    feedbackReducer,
   }),
   applyMiddleware(logger),
 );
