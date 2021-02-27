@@ -10,6 +10,14 @@
   margin-bottom: 20px;
 }
 
+.Admin-header {
+  background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
+  min-height: 70px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
 .App-title {
   font-size: 2em;
 }

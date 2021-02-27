@@ -46,6 +46,11 @@ function FeelingPage() {
   
   return (
     <>
+      <header className='App-header'>
+        <h1 className='App-title'>Feedback!</h1>
+        <h4 className="subtitle">Don't forget it!</h4>
+      </header>
+      
       <h4 id="feelingScore" className="feedbackQuestion">How are you feeling today?</h4>
       <Box display="flex" justifyContent="center" mb={3}>
         <RadioGroup row aria-label="FeelingScore" name="feeling" value={feelingScore} onChange={(event) => setFeelingScore(event.target.value)}>

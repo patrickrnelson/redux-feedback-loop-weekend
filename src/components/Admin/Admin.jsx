@@ -24,6 +24,12 @@ const getAllFeedback = () => {
 }
 
   return (
+    <>
+    <header className='Admin-header'>
+      <h1 className='App-title'>Admin!</h1>
+      <h4 className="subtitle">Don't forget to check feedback!</h4>
+    </header>
+    
     <Box display="flex" justifyContent="center">
     <table id="admin-table">
       <thead>
@@ -52,6 +58,7 @@ const getAllFeedback = () => {
       </tbody>
     </table>
     </Box>
+    </>
   )
 }
 

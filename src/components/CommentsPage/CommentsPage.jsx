@@ -45,6 +45,10 @@ function CommentsPage() {
 
   return (
     <>
+    <header className='App-header'>
+      <h1 className='App-title'>Feedback!</h1>
+      <h4 className="subtitle">Don't forget it!</h4>
+    </header>
     <h4 id="comments" className="feedbackQuestion">Any comments you want to leave?</h4>
     <Box mb={1}>
     <TextField

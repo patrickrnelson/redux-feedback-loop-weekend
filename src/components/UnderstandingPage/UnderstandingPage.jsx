@@ -46,6 +46,10 @@ function UnderstandingPage() {
 
   return (
     <>
+    <header className='App-header'>
+      <h1 className='App-title'>Feedback!</h1>
+      <h4 className="subtitle">Don't forget it!</h4>
+    </header>
     <h4 id="understandingScore" className="feedbackQuestion">How well are you understanding the content?</h4>
     <Box display="flex" justifyContent="center" mb={3}>
       <RadioGroup row aria-label="UnderstandingScore" name="understanding" value={understandingScore} onChange={(event) => setUnderstanding(event.target.value)}>

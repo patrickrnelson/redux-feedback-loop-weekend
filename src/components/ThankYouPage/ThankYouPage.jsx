@@ -11,6 +11,10 @@ function ThankYouPage() {
 
   return (
     <>
+    <header className='App-header'>
+      <h1 className='App-title'>Feedback!</h1>
+      <h4 className="subtitle">Don't forget it!</h4>
+    </header>
     <h2>Thank you!</h2>
     <Button onClick={onClick} color="secondary" variant="contained">Leave New Feedback</Button>
     </>
