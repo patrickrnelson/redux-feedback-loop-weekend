@@ -9,12 +9,18 @@ function SupportedPage() {
   const [supportScore, setSupportScore] = useState(0);
 
   const onClick = () => {
-    dispatch({
-      type: 'SUPPORT_SCORE',
-      payload: supportScore
+    if(supportScore > 0 && supportScore < 6 ) {
+      dispatch({
+        type: 'SUPPORT_SCORE',
+        payload: supportScore
     })
+      history.push('/comments')
+    }
+    else {
+      alert('Please choose a number between 1 and 5')
+    }
 
-    history.push('/comments')
+    
   }
 
   return (

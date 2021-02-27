@@ -9,7 +9,7 @@ function UnderstandingPage() {
   const [understandingScore, setUnderstanding] = useState(0);
 
   const onClick = () => {
-    if(feelingScore > 0 && feelingScore < 6) {
+    if(understandingScore > 0 && understandingScore < 6) {
       dispatch({
         type: 'UNDERSTANDING_SCORE',
         payload: understandingScore
