@@ -22,9 +22,9 @@ router.post('/', (req,res) => {
 
 // GET - Might not need
 
-/*
+
 router.get('/', (req,res) => {
-  pool.query('SELECT * FROM "feedback";')
+  pool.query('SELECT * FROM "feedback" ORDER BY id;')
     .then((results) => {
     console.log('Successful GET');
     res.send(results.rows)
@@ -34,7 +34,7 @@ router.get('/', (req,res) => {
       res.status(500);
     })
 });
-*/
+
 
 
 

@@ -9,6 +9,7 @@ import SupportedPage from '../SupportedPage/SupportedPage';
 import CommentsPage from '../CommentsPage/CommentsPage';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import ThankYouPage from '../ThankYouPage/ThankYouPage'
+import Admin from '../Admin/Admin'
 
 function App() {
 
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path='/thankyou'>
           <ThankYouPage />
+        </Route>
+        <Route path='/admin'>
+          <Admin />
         </Route>
       </Router>
  

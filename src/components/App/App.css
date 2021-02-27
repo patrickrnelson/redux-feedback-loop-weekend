@@ -34,3 +34,11 @@
 .nextBtn {
   margin-top: 20px;
 }
+
+#admin-table {
+  width: 65%;
+}
+
+#admin-table thead {
+  font-weight: bold;
+}
