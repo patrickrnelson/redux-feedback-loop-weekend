@@ -19,11 +19,9 @@ router.post('/', (req,res) => {
       console.log('Error in POST', err);
       res.sendStatus(500);
     })
-})
+}) // end POST
 
-// GET - Might not need
-
-
+// GET - Don't need for base mode
 router.get('/', (req,res) => {
   pool.query('SELECT * FROM "feedback" ORDER BY id;')
     .then((results) => {
@@ -37,10 +35,6 @@ router.get('/', (req,res) => {
       console.log('Error in GET', err);
       res.status(500);
     })
-});
-
-
-
-
+}); // end GET
 
 module.exports = router;

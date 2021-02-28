@@ -1,10 +1,11 @@
-import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 // Material UI
 import Button from '@material-ui/core/Button';
 
 function ThankYouPage() {
   const history = useHistory();
 
+  // send user back to the start page
   const onClick = () => {
     history.push('/')
   }

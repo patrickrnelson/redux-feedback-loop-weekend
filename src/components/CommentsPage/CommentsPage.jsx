@@ -1,8 +1,8 @@
-import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // Material UI
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -13,7 +13,9 @@ function CommentsPage() {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  // local state to track the comments
   const [comments, setComments] = useState('');
+  // set the open state for the error alert
   const [open, setOpen] = React.useState(false);
 
   // Alert for the MUI snackbar
@@ -21,6 +23,9 @@ function CommentsPage() {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
 
+  // onClick
+  // Send the input to the feedback reducer
+  // and send user to the next page (review)
   const onClick = () => {
     if(comments !== '') {
       dispatch({
@@ -29,6 +34,7 @@ function CommentsPage() {
       })
       history.push('/review')
     }
+    // if score is not between 1 and 5, open an error message
     else {
       setOpen(true)
     }
