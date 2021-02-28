@@ -7,6 +7,8 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+// Reducer captures all of the inputs from each component
+// and puts them in an object
 const feedbackReducer = (state = {}, action) => {
   switch(action.type) {
     case 'FEELING_SCORE':

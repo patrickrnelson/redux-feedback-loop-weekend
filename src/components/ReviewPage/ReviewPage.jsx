@@ -9,6 +9,7 @@ function ReviewPage() {
   const dispatch = useDispatch();
   const feedbackSubmission = useSelector(store => store.feedbackReducer);
 
+  // POST the contents of the reducer to the DB
   const onClick = () => {
     axios.post('/feedback', {
       feeling: feedbackSubmission.feeling,
@@ -16,6 +17,9 @@ function ReviewPage() {
       support: feedbackSubmission.support,
       comments: feedbackSubmission.comments
     })
+    // after successful POST
+    // send user to thank you page
+    // clear the reducer state
     .then((res) => {
       console.log('Successful POST', res);
       history.push('/thankyou')

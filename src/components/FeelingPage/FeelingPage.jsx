@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 //Material UI
@@ -14,6 +14,7 @@ function FeelingPage() {
   const history = useHistory();
   const dispatch = useDispatch();
   
+  // local state to track the inputted score
   const [feelingScore, setFeelingScore] = useState(0);
   // set the open state for the error alert
   const [open, setOpen] = React.useState(false);
@@ -23,6 +24,9 @@ function FeelingPage() {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
 
+  // onClick
+  // Send the input to the feedback reducer
+  // and send user to the next page (understanding)
   const onClick = () => {
     if(feelingScore > 0 && feelingScore < 6) {
       dispatch({
@@ -31,12 +35,13 @@ function FeelingPage() {
       })
       history.push('/understanding')
     }
+    // if score is not between 1 and 5, open an error message
     else {
       setOpen(true)
     }
-  }
+  } // end onClick
 
-  // handle the close for Material UI snackbar
+  // handle the close for Material UI error message
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
