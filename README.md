@@ -1,23 +1,26 @@
 # Project Name
 
-Image Gallery - React
+Redux - Feedback Form
 
 ## Description
 
 _Duration: Weekend Challenge_
 
-The fourth weekend challenge of Prime Digital Academy. The challenge was to use React to create a webpage that contains a gallery of images. To implement and practice conditional rendering, part of the challenge was to replace the image with a description of that image on a click. The images all have their own like count and like button, and when the like button is clicked, the like count updates accordingly. 
+The fifth weekend challenge of Prime Digital Academy. The challenge was to use React.js/Redux to create a multi-page feedback form for students. This form will keep all of the submitted answers in an object in a reducer, and when the user submits the form, that object will then be stored in a database.
 
 ## Screenshot
 
-![screenshot of an image in the gallery application](./public/images/image_screenshot.png)
-![screenshot of a description in the gallery application](./public/images/description_screenshot.png)
+*One of the input pages*
+![screenshot of an image in the gallery application](./public/images/feedback_number_inputs.png)
+*The comments page with an error*
+![screenshot of a description in the gallery application](./public/images/feed_back_comments_error.png)
 
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 - [React.js](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
 - [postgresql](https://www.postgresql.org/)
 - [Postico](https://eggerapps.at/postico/)
 
@@ -27,7 +30,7 @@ The fourth weekend challenge of Prime Digital Academy. The challenge was to use 
 2. Open the folder in an editor of your choice
 3. Run an 'npm install' in your terminal
 4. Run 'npm install pg' to install postgresql
-5. Create a Database called "react_gallery" (using Postico)
+5. Create a Database called "prime_feedback" (using Postico)
 6. Using the database.sql code, create a table in the database
 7. Run 'npm run server' in your terminal to start the server
 8. Run 'npm run client' in another terminal to start the React Server
@@ -35,22 +38,21 @@ The fourth weekend challenge of Prime Digital Academy. The challenge was to use 
 
 ## Usage
 
-1. Scroll down the page to see all of the images.
-2. Click on an image to see a description of the image.
-2. If you like an image, hit the like button!
-4. The like count will increment for every like button click.
+1. Click the start button to start the feedback form
+2. On the next three pages, select a radio input between 1 and 5
+3. On the comments page, write in any additional comments you may have
+4. Review your answers and submit
 
-Stretch - Add a photo to the gallery
 
-1. Find an image online and copy the image URL.
-2. Paste that URL into the first form input.
-3. Write a description for the image in the second input field.
-4. Hit submit! Scroll down the page to see the newly added image. 
+Stretch - Admin page
+
+1. Navigate to localhost:3000/#/admin
+2. See all of the submitted feedback
 
 
 ## Built With
 
-HTML // CSS // Javascript // React.js // node.js 
+HTML // CSS // Javascript // React.js // Redux // Material-UI // node.js 
 
 ## License
 
