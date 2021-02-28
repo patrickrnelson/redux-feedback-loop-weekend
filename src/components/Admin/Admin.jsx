@@ -23,6 +23,16 @@ const getAllFeedback = () => {
   })
 }
 
+const onDelete = () => {
+  axios.delete('/feedback/:id')
+  .then((response) => {
+    console.log('Successful DELETE');
+  })
+  .catch((err) => {
+    console.log('Error in Delete', err);
+  })
+}
+
   return (
     <>
     <header className='Admin-header'>
@@ -52,6 +62,7 @@ const getAllFeedback = () => {
               <td>{feedback.support}</td>
               <td>{feedback.comments}</td>
               <td>{feedback.flag}</td>
+              <td><button onClick={onDelete}>Delete</button></td>
             </tr>
           )
         })}
